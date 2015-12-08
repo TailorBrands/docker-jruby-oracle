@@ -3,6 +3,7 @@ MAINTAINER Nadav Shatz <nadav@tailorbrands.com>
 
 RUN apt-get update
 RUN apt-get install -y wget
+RUN apt-get install -y libc6-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # jruby
 ENV JRUBY_VERSION 9.0.4.0
