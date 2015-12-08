@@ -1,11 +1,17 @@
 FROM tailor/java-oracle:latest
 MAINTAINER Nadav Shatz <nadav@tailorbrands.com>
 
+RUN apt-get update
+RUN apt-get install -y wget
+
 # jruby
 ENV JRUBY_VERSION 9.0.4.0
+ENV JRUBY_SHA256 fcf828c4ad5b92430a349f1e873c067a15e0952d167d07368135c513fe0d18fb
 RUN mkdir /opt/jruby \
-  && curl http://jruby.org.s3.amazonaws.com/downloads/${JRUBY_VERSION}/jruby-bin-${JRUBY_VERSION}.tar.gz \
-  | tar -zxC /opt/jruby --strip-components=1 \
+  && wget https://s3.amazonaws.com/jruby.org/downloads/${JRUBY_VERSION}/jruby-bin-${JRUBY_VERSION}.tar.gz -O /tmp/jruby.tar.gz \
+  && echo "$JRUBY_SHA256 /tmp/jruby.tar.gz" | sha256sum -c - \
+  && tar -zx --strip-components=1 -f /tmp/jruby.tar.gz -C /opt/jruby \
+  && rm /tmp/jruby.tar.gz \
   && update-alternatives --install /usr/local/bin/ruby ruby /opt/jruby/bin/jruby 1
 ENV PATH /opt/jruby/bin:$PATH
 
