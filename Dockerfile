@@ -1,4 +1,4 @@
-FROM tailor/java-oracle:master
+FROM tailor/java-oracle:latest
 MAINTAINER Nadav Shatz <nadav@tailorbrands.com>
 
 # jruby
