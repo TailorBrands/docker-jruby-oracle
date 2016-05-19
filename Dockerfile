@@ -5,8 +5,8 @@ RUN apt-get update
 RUN apt-get install -y wget
 
 # jruby
-ENV JRUBY_VERSION 9.1.0.0
-ENV JRUBY_SHA256 ff48c8eea61d0be93d807f56eda613350e91f598f6f4f71ef73ed53e7d0530ad
+ENV JRUBY_VERSION 9.1.1.0
+ENV JRUBY_SHA256 c5705b97569486fe52ca3754dea391c84d33d1702a48fcb8a4ac9838d18e6307
 RUN mkdir /opt/jruby \
   && wget https://s3.amazonaws.com/jruby.org/downloads/${JRUBY_VERSION}/jruby-bin-${JRUBY_VERSION}.tar.gz -O /tmp/jruby.tar.gz \
   && echo "$JRUBY_SHA256 /tmp/jruby.tar.gz" | sha256sum -c - \
