@@ -6,8 +6,8 @@ RUN apt-get install -y wget
 RUN apt-get install -y libc6-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # jruby
-ENV JRUBY_VERSION 9.1.2.0
-ENV JRUBY_SHA256 60598a465883ab4c933f805de4a7f280052bddc793b95735465619c03ca43f35
+ENV JRUBY_VERSION 9.1.6.0
+ENV JRUBY_SHA256 a32dc54b80aa0069323654e06b84fdcea077d3601ec54208a67c4b969f369b89
 RUN mkdir /opt/jruby \
   && wget https://s3.amazonaws.com/jruby.org/downloads/${JRUBY_VERSION}/jruby-bin-${JRUBY_VERSION}.tar.gz -O /tmp/jruby.tar.gz \
   && echo "$JRUBY_SHA256 /tmp/jruby.tar.gz" | sha256sum -c - \
