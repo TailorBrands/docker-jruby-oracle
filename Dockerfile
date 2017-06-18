@@ -1,4 +1,4 @@
-FROM ibmjava:8-sfj
+FROM ibmjava:8-jre
 MAINTAINER Nadav Shatz <nadav@tailorbrands.com>
 
 RUN apt-get update && apt-get install -y curl libc6-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
