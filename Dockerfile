@@ -1,9 +1,7 @@
 FROM tailor/java-oracle:latest
 MAINTAINER Nadav Shatz <nadav@tailorbrands.com>
 
-RUN apt-get update
-RUN apt-get install -y wget
-RUN apt-get install -y libc6-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update &&  apt-get install -y wget libc6-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # jruby
 ENV JRUBY_VERSION 9.1.8.0
