@@ -1,4 +1,4 @@
-FROM tailor/java-oracle:latest
+FROM tailor/java-oracle:16
 MAINTAINER Nadav Shatz <nadav@tailorbrands.com>
 
 RUN add-apt-repository -y ppa:webupd8team/java
@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y git-core wget build-essential zlib1g-de
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV JRUBY_VERSION 9.1.12.0
-ENV JRUBY_SHA256 ddb23c95f4b3cc3fc1cc57b81cb4ceee776496ede402b9a6eb0622cf15e1a597
+ENV JRUBY_VERSION 9.1.13.0
+ENV JRUBY_SHA256 9d156646623ac2f27174721035b52572a4b05690db7c1293295aa2c04aad3908
 RUN mkdir /opt/jruby \
   && curl -fSL https://s3.amazonaws.com/jruby.org/downloads/${JRUBY_VERSION}/jruby-bin-${JRUBY_VERSION}.tar.gz -o /tmp/jruby.tar.gz \
   && echo "$JRUBY_SHA256 /tmp/jruby.tar.gz" | sha256sum -c - \
