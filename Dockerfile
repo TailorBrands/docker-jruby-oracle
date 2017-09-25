@@ -1,4 +1,4 @@
-FROM tailor/java-oracle:16
+FROM tailor/java-oracle:latest
 MAINTAINER Nadav Shatz <nadav@tailorbrands.com>
 
 RUN add-apt-repository -y ppa:webupd8team/java
