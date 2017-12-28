@@ -53,7 +53,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     yarn global add bower
 
 # Image magick
-ENV IMAGE_MAGICK_VER 7.0.5-4
+ENV IMAGE_MAGICK_VER 7.0.7-17
 RUN wget https://s3.amazonaws.com/tailorbrands-ops/ImageMagick-${IMAGE_MAGICK_VER}.tar.gz && \
     tar xvzf ImageMagick-${IMAGE_MAGICK_VER}.tar.gz && \
     cd ImageMagick-${IMAGE_MAGICK_VER} && \
